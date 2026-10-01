@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>AreaPickup</AssemblyName>
+    <RootNamespace>AreaPickup</RootNamespace>
+    <Version>1.0.1</Version>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- Local environment -->
+    <ValheimDir>D:\Steam\steamapps\common\Valheim</ValheimDir>
+    <ProfileDir>C:\Users\vesap\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\DreamHeim2</ProfileDir>
+    <ManagedDir>$(ValheimDir)\valheim_Data\Managed</ManagedDir>
+    <BepInExDir>$(ProfileDir)\BepInEx</BepInExDir>
+    <JotunnDir>$(BepInExDir)\plugins\ValheimModding-Jotunn</JotunnDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Valheim (publicized so private fields like Pickable.m_picked are reachable) -->
+    <Reference Include="assembly_valheim" Publicize="true">
+      <HintPath>$(ManagedDir)\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_utils" Publicize="true">
+      <HintPath>$(ManagedDir)\assembly_utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Splatform">
+      <HintPath>$(ManagedDir)\Splatform.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Unity -->
+    <Reference Include="UnityEngine">
+      <HintPath>$(ManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(ManagedDir)\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- BepInEx / Harmony -->
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExDir)\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Jötunn -->
+    <Reference Include="Jotunn">
+      <HintPath>$(JotunnDir)\Jotunn.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Drop the built DLL straight into the DreamHeim2 profile -->
+  <Target Name="CopyToProfile" AfterTargets="Build" Condition="Exists('$(BepInExDir)\plugins')">
+    <MakeDir Directories="$(BepInExDir)\plugins\Dreamscapist-AreaPickup" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BepInExDir)\plugins\Dreamscapist-AreaPickup" />
+  </Target>
+
+</Project>

@@ -1,0 +1,11 @@
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\bin\Release\AreaPickup.deps.json
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\bin\Release\AreaPickup.dll
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\bin\Release\AreaPickup.pdb
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.csproj.AssemblyReference.cache
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.IgnoresAccessChecksTo.cs
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.AssemblyInfoInputs.cache
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.AssemblyInfo.cs
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.csproj.CoreCompileInputs.cache
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.dll
+C:\Users\vesap\Downloads\AreaPickup-src\AreaPickup\obj\Release\AreaPickup.pdb

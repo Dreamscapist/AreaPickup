@@ -1,0 +1,10 @@
+{
+  "name": "AreaPickup",
+  "version_number": "1.0.1",
+  "website_url": "",
+  "description": "Pick up every dropped item in a radius with one key (default Shift+E, 10 m, adjustable 5-100 m). Leaves placed food alone.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2202",
+    "ValheimModding-Jotunn-2.26.0"
+  ]
+}
